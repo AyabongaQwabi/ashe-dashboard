@@ -1,0 +1,101 @@
+.App {
+  text-align: center;
+  background: url('/bg.jpg');
+  background-size: cover;
+  margin: 0;
+  height: 100vh;
+  font-family: 'Abel', sans-serif;
+}
+
+.control-container{
+  background:rgba(0,0,0,0.4);
+  font-family: 'Abel', sans-serif !important;
+}
+
+.control-container h1{
+  font-size: 42px;
+  font-family: 'Abel', sans-serif !important;
+  
+}
+.control-container h2{
+  font-size: 32px;
+  
+}
+
+.nav{
+  background:rgba(0,0,0,0.8);
+}
+
+.nav h2{
+    padding: 20px;
+    background: rebeccapurple;
+    width: 260px;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.full-screen-grid {
+  height:100vh;
+  color:#fff;
+}
+.menu-tree{
+  padding: 30px;
+  font-size: 20px;
+}
+
+.menu-item{
+  padding-left: 20px;
+  padding-top: 15px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.hidden{
+  display: none;
+  overflow: hidden;
+  transition: height .3s ease-out;
+}
+
+.visible{
+  display: block;
+  color:rebeccapurple;
+  transition: height .3s ease-in;
+  float: left;
+  width:90% !important;
+}
+
+.visible::before {
+  color: #fbbd08;
+  padding-top: 10px;
+  content: '-';
+  float: left;
+  width:10% !important;
+}
+.visible .menu-item{
+  width:90% !important;
+  padding-bottom: 10px;
+}
