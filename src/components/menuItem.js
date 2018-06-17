@@ -21,11 +21,14 @@ class MenuItem extends Component {
     }
 
     render() {
-      const {header, children , run, body} = this.props;
+      const {header, children , run, body, icon } = this.props;
       let onclick = !R.isNil(children) ? {} :  run;
       return (
         <div className='menu-item'>
-            <div className='menu-item-header' onClick={R.isEmpty(onclick) ? this.toggleKidsState : onclick}>{header}</div>
+            <div className='menu-item-header' onClick={R.isEmpty(onclick) ? this.toggleKidsState : onclick}>
+            <i className={icon} ariaHidden="true"></i>
+            {header}
+            </div>
             <div className={`menu-item-body ${this.state.kidsState}`}>{children}</div>
         </div>
       );
@@ -35,6 +38,7 @@ class MenuItem extends Component {
 MenuItem.propTypes ={
     header: PropTypes.string.isRequired,
     run: PropTypes.func,
+    icon: PropTypes.string
 };
 
 export default MenuItem;

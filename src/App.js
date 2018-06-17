@@ -26,23 +26,28 @@ class App extends Component {
     const options= [
       {
         type:'menu-item',
-        header:'Dashboard'
+        header:'Dashboard',
+        icon:'fa fa-chart-bar',
       },
       {
         type:'menu-item',
+        icon:'fa fa-history',
         header:'Automation'
       },
       {
         type:'menu-item-with-body',
         header:'Settings',
+        icon:'fa fa-cog',
         run: ()=> alert('hello from settings'),
         body:[
           {
+            icon: 'fa fa-lock',
             type:'menu-item-with-body',
             header:"Security",
             run: ()=> alert('hello from security'),
             body:[
               {
+                icon:'fa fa-key',
                 type:'menu-item',
                 header: 'SSH',
                 run: this.configureSSH,
@@ -54,13 +59,16 @@ class App extends Component {
       {
         type:'menu-item-with-body',
         header:'Users',
+        icon:'fa fa-user',
         body:[
           {
+            icon:'fa fa-user-cog',
             type:'menu-item',
             header: 'Manage',
             run: this.configureSSH,
           },
           {
+            icon:'fas fa-folder-open',
             type:'menu-item',
             header: 'Activity',
             run: ()=>{},

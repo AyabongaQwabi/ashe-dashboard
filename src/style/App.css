@@ -73,7 +73,10 @@
   text-align: left;
   cursor: pointer;
 }
-
+.menu-item-header i{
+  padding-right: 10px;
+  font-size: 16px;
+}
 .hidden{
   display: none;
   overflow: hidden;
@@ -82,20 +85,20 @@
 
 .visible{
   display: block;
-  color:rebeccapurple;
+  color:#767676;
   transition: height .3s ease-in;
   float: left;
   width:90% !important;
 }
 
-.visible::before {
+.visible .menu-item .menu-item-header i{
   color: #fbbd08;
-  padding-top: 10px;
-  content: '-';
-  float: left;
-  width:10% !important;
+  font-size: 14px;
 }
 .visible .menu-item{
   width:90% !important;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
+}
+.visible .menu-item:not(:first-child){
+  padding-top: 0px;
 }
