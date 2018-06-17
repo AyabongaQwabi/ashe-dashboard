@@ -29,6 +29,10 @@ class App extends Component {
         header:'Dashboard'
       },
       {
+        type:'menu-item',
+        header:'Automation'
+      },
+      {
         type:'menu-item-with-body',
         header:'Settings',
         run: ()=> alert('hello from settings'),
@@ -48,8 +52,20 @@ class App extends Component {
         ]
       },
       {
-        type:'menu-item',
-        header:'New'
+        type:'menu-item-with-body',
+        header:'Users',
+        body:[
+          {
+            type:'menu-item',
+            header: 'Manage',
+            run: this.configureSSH,
+          },
+          {
+            type:'menu-item',
+            header: 'Activity',
+            run: ()=>{},
+          }
+        ]
       }]
 
     
