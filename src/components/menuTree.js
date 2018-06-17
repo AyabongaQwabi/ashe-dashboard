@@ -1,19 +1,20 @@
 import React, {Component } from 'react';
+import PropTypes from 'prop-types';
 import MenuItem from './menuItem';
 import * as R from 'ramda';
 
 class MenuTree extends Component {
     render() {
       const { items } = this.props;
-      
+      const { header, run, icon, body, type } = item;
       const renderItem = (item) => {
-        if(item.type === 'menu-item-with-body')
+        if(type === 'menu-item-with-body')
         { 
-          return (<MenuItem header={item.header} run={item.run} key={item.header}>
-            {item.body.map(i => renderItem(i))}
+          return (<MenuItem header={header} run={run} key={header} icon={icon}>
+            {body.map(i => renderItem(i))}
           </MenuItem>)
         }
-        return <MenuItem header={item.header} run={item.run} key={item.header} />
+        return <MenuItem header={header} run={run} key={header} />
       }
 
       const tree = items.map((item) => {
@@ -25,5 +26,13 @@ class MenuTree extends Component {
     }
   }
 
+MenuTree.propTypes ={
+    item: PropTypes.arrayOf(PropTypes.shape({
+      header: PropTypes.string.isRequired,
+      body: PropTypes.array,
+      run: PropTypes.func,
+      icon:PropTypes.string
+    }))
+};
 
 export default MenuTree;
