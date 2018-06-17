@@ -1,20 +1,19 @@
 import React, {Component } from 'react';
 import PropTypes from 'prop-types';
 import MenuItem from './menuItem';
-import * as R from 'ramda';
 
 class MenuTree extends Component {
     render() {
       const { items } = this.props;
-      const { header, run, icon, body, type } = item;
       const renderItem = (item) => {
+        const { header, run, icon, body, type } = item;
         if(type === 'menu-item-with-body')
         { 
           return (<MenuItem header={header} run={run} key={header} icon={icon}>
             {body.map(i => renderItem(i))}
           </MenuItem>)
         }
-        return <MenuItem header={header} run={run} key={header} />
+        return <MenuItem header={header} run={run} key={header} icon={icon} />
       }
 
       const tree = items.map((item) => {
