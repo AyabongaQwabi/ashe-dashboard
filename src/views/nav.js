@@ -11,7 +11,7 @@ const configureSSH = (dispatch) => () =>
       .get('http://localhost:8081/keys')
       .then((keys)=> {
         const keysArr = R.without([''],keys.data.split('\n'))
-        dispatch(navigateTo('ssh',keysArr))
+        dispatch(navigateTo('ssh',{ keys: keysArr }))
       })
 
 const navFunctionMap = {
@@ -31,11 +31,9 @@ const functionalise = R.curry((dispatch, options) =>
 
 
 class nav extends Component {
-
     render(){
         const { items, navigate } = this.props;
         const nav = navigate(items)
-        console.log(nav)
         return (
             <MenuTree items={nav} />
         )

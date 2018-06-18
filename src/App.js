@@ -4,6 +4,16 @@ import { Grid } from 'semantic-ui-react'
 import nav from './config/nav.json'
 import Nav from './views/nav';
 import './style/App.css';
+import sshView from './views/ssh';
+import home from './views/home';
+import { connect } from 'react-redux';
+
+const views = {
+  'home': home,
+  'ssh': sshView
+};
+
+const getView = (type) =>  views[type];
 
 class App extends Component {
   constructor(){
@@ -12,7 +22,9 @@ class App extends Component {
   }
 
   render() {
-    const { mainView } = this.state;
+    const { currentRoute, routeData } =  this.props;
+    const props = routeData;
+    const MainView = getView(currentRoute.replace('/',''))
     return (
       <div className="App">
         <Grid className='full-screen-grid'>
@@ -22,7 +34,7 @@ class App extends Component {
               <Nav items={nav}/>
             </Grid.Column>
             <Grid.Column width={13} className='control-container'>
-              {mainView}
+              <MainView {...props} />
             </Grid.Column>
             </Grid.Row>
           </Grid>
@@ -31,4 +43,9 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  currentRoute: state.getIn(['nav','currentRoute']),
+  routeData: state.getIn(['nav','routeData'])
+})
+
+export default connect(mapStateToProps)(App);

@@ -26,7 +26,7 @@ const logger = ({ getState, dispatch }) => next => action =>{
     return nextAction;
 }
 
-const store = createStore(appStore,fromJS({currenntRoute :'/'}), applyMiddleware(...[thunk,logger]))
+const store = createStore(appStore,fromJS({}), applyMiddleware(...[thunk,logger]))
 
 ReactDOM.render(
     <Provider store={store}>
