@@ -5,17 +5,17 @@ import * as R from 'ramda';
 class MenuItem extends Component {
     constructor(){
         super();
-        this.state = { kidsState:'hidden' }
+        this.state = { kidsState:'show' }
         this.toggleKidsState = this.toggleKidsState.bind(this);
     }
 
     toggleKidsState(){
         console.log('toggilng kid state')
-        if(this.state.kidsState === 'hidden'){
-            this.setState({kidsState: 'visible'});
+        if(this.state.kidsState === 'hide'){
+            this.setState({kidsState: 'show'});
         }
         else{
-            this.setState({kidsState: 'hidden'});
+            this.setState({kidsState: 'hide'});
         }
         
     }

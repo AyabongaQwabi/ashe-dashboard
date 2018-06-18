@@ -32,31 +32,6 @@
     width: 18.2vw;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 .full-screen-grid {
   height:105vh;
   color:#fff;
@@ -77,13 +52,13 @@
   padding-right: 10px;
   font-size: 16px;
 }
-.hidden{
+.hide{
   display: none;
   overflow: hidden;
   transition: height .3s ease-out;
 }
 
-.visible{
+.show{
   display: block;
   color:#767676;
   transition: height .3s ease-in;
@@ -91,15 +66,15 @@
   width:90% !important;
 }
 
-.visible .menu-item .menu-item-header i{
+.show .menu-item .menu-item-header i{
   color: #fbbd08;
   font-size: 14px;
 }
-.visible .menu-item{
+.show .menu-item{
   width:90% !important;
   padding-bottom: 15px;
 }
-.visible .menu-item:not(:first-child){
+.show .menu-item:not(:first-child){
   padding-top: 0px;
 }
 
