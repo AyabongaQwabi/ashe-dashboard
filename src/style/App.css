@@ -27,9 +27,9 @@
 }
 
 .nav h2{
-    padding: 20px;
+    padding: 22px;
     background: rebeccapurple;
-    width: 260px;
+    width: 18.2vw;
 }
 
 .App-logo {
@@ -58,7 +58,7 @@
 }
 
 .full-screen-grid {
-  height:100vh;
+  height:105vh;
   color:#fff;
 }
 .menu-tree{
@@ -101,4 +101,42 @@
 }
 .visible .menu-item:not(:first-child){
   padding-top: 0px;
+}
+
+
+.ssh-view-box {
+  background: #2c0465bf;
+  text-align: left;
+  width:82vw;
+  height: 95vh;
+  padding: 20px;
+  margin:20px;
+  margin-left: -15px;
+  word-wrap: break-word;
+}
+
+.ssh-view-box h3,h4 {
+  font-weight: 300;
+}
+.ssh-view-box .keys{
+  padding:10px;
+  overflow: scroll;
+  height:80vh;
+}
+
+.ssh-box{
+  background:#fff;
+  color:#333;
+  border-radius: 3px;
+  padding:20px;
+  margin-top:5px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.icon-box{
+  width: 100%;
+  color: #f2711c;
+  text-align: right;
+  font-size: 22px;
 }
