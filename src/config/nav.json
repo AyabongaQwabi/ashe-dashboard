@@ -1,0 +1,49 @@
+[
+    {
+      "type":"menu-item",
+      "header":"Dashboard",
+      "icon":"fa fa-chart-bar"
+    },
+    {
+      "type":"menu-item",
+      "icon":"fa fa-history",
+      "header":"Automation"
+    },
+    {
+      "type":"menu-item-with-body",
+      "header":"Settings",
+      "icon":"fa fa-cog",
+      "body": [
+        {
+          "icon": "fa fa-lock",
+          "type":"menu-item-with-body",
+          "header":"Security",
+          "body":[
+            {
+              "icon":"fa fa-key",
+              "type":"menu-item",
+              "header": "SSH",
+              "run": "config-ssh"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type":"menu-item-with-body",
+      "header":"Users",
+      "icon":"fa fa-user",
+      "body":[
+        {
+          "icon":"fa fa-user-cog",
+          "type":"menu-item",
+          "header": "Manage",
+          "run":  "config-ssh"
+        },
+        {
+          "icon":"fas fa-folder-open",
+          "type":"menu-item",
+          "header": "Activity"
+        }
+      ]
+    }]
