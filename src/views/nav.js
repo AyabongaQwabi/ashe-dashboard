@@ -14,8 +14,14 @@ const configureSSH = (dispatch) => () =>
         dispatch(navigateTo('ssh',{ keys: keysArr }))
       })
 
+const loadHome = (dispatch) => () => dispatch(navigateTo('home', {}));
+
+const configureAutomation = (dispatch) => () => dispatch(navigateTo('automation', {}));
+
 const navFunctionMap = {
     'config-ssh': configureSSH,
+    'home': loadHome,
+    'config-auto': configureAutomation,
 }
 
 const functionalise = R.curry((dispatch, options) => 
@@ -34,6 +40,7 @@ class nav extends Component {
     render(){
         const { items, navigate } = this.props;
         const nav = navigate(items)
+        console.log(nav)
         return (
             <MenuTree items={nav} />
         )

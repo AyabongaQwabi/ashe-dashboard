@@ -2,12 +2,14 @@
     {
       "type":"menu-item",
       "header":"Dashboard",
-      "icon":"fa fa-chart-bar"
+      "icon":"fa fa-chart-bar",
+      "run": "home"
     },
     {
       "type":"menu-item",
       "icon":"fa fa-history",
-      "header":"Automation"
+      "header":"Automation",
+      "run": "config-auto"
     },
     {
       "type":"menu-item-with-body",
