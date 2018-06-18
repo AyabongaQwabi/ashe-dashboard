@@ -5,15 +5,17 @@ import * as R from 'ramda';
 import request from 'axios';
 import { connect } from 'react-redux';
 import navigateTo from '../store/actions/nav'
+import generateHeaders from '../config/kix/gen'
 
-const configureSSH = (dispatch) => () =>
-    request
-      .get('http://localhost:8081/keys')
+const configureSSH = (dispatch) => () => {
+    const headers = generateHeaders();
+    return request
+      .get('http://localhost:8081/keys', headers)
       .then((keys)=> {
         const keysArr = R.without([''],keys.data.split('\n'))
         dispatch(navigateTo('ssh',{ keys: keysArr }))
       })
-
+}
 const loadHome = (dispatch) => () => dispatch(navigateTo('home', {}));
 
 const configureAutomation = (dispatch) => () => dispatch(navigateTo('automation', {}));
